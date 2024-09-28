@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="/css/galle.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Video Gallery</h1>
+    </div>
+    <div class="gallery-container">
+        <% videos.forEach(video => { %>
+            <div class="video-card">
+                <video class="video" id="video-<%= video %>" src="/videos/<%= video %>" preload="metadata"></video>
+                <div class="controls">
+                    <button class="play-btn" data-video="video-<%= video %>">Play</button>
+                    <button class="mute-btn" data-video="video-<%= video %>">Mute</button>
+                    <input type="range" class="volume-slider" data-video="video-<%= video %>" min="0" max="1" step="0.1" value="1">
+                    <button class="maximize-btn" data-video="video-<%= video %>">Maximize</button>
+                    <button class="minimize-btn" data-video="video-<%= video %>">Minimize</button>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

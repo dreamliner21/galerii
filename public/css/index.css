@@ -1,0 +1,75 @@
+/* Full page body setup */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #454444;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../images/background1.jpg'); /* Default background color */
+    transition: background 1s ease-in-out; /* Smooth transition for background change */
+}
+
+/* Header positioned at the top */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000; /* Ensure the header is above other elements */
+}
+
+/* Increase space between header and main content */
+main {
+    padding-top: 150px; /* Adjust according to the height of the header */
+    text-align: center;
+}
+
+/* Icon positioned at the top-right corner */
+.bi-image {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #4f4d4d;
+    font-size: 24px;
+    cursor: pointer; /* Show pointer cursor when hovering the icon */
+    z-index: 1001; /* Ensure it's above the background */
+}
+
+.bi-image:hover {
+    color: #ddd; /* Change icon color on hover */
+}
+
+/* Navigation links */
+.navigation a {
+    margin: 10px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #403c3c;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.navigation a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    padding: 20px;
+    color: #413f3f;
+    z-index: 1000;
+}

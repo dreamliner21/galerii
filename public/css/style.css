@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url('../images/bggallery.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed; /* Agar background tetap saat scroll */
+}
+
+/* Navbar Styling */
+/* .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: transparent;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+} */
+
+/* Header Styling */
+/* Header Styling - Pindahkan h1 ke pojok kiri atas */
+h1 {
+    position: absolute; /* Mengatur h1 agar menggunakan absolute positioning */
+    top: 10px; /* Jarak dari atas */
+    left: 10px; /* Jarak dari kiri */
+    margin: 0;
+    font-size: 24px;
+    color: #3d3f42;
+    background-color: transparent; /* Pastikan tidak ada background */
+    z-index: 1001; /* Pastikan berada di atas elemen lain */
+}
+
+/* Gallery Container */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 80px; /* Offset for fixed navbar */
+    padding: 0 10px; /* Add padding to prevent overflow */
+}
+
+/* Video Card Styling */
+.video-card {
+    margin: 15px;
+    width: 220px; /* Default size for medium/large screens */
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Styling */
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video keeps aspect ratio */
+}
+
+/* Controls Styling */
+.controls {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    border-radius: 4px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.controls:hover {
+    opacity: 1;
+}
+
+/* Button Styles for Controls */
+.play-btn, .mute-btn, .maximize-btn, .minimize-btn {
+    background: none;
+    color: #4a90e2;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.play-btn:hover, .mute-btn:hover, .maximize-btn:hover, .minimize-btn:hover {
+    color: #357ABD;
+    transform: scale(1.1);
+}
+
+.volume-slider {
+    width: 60px;
+    cursor: pointer;
+}
+
+/* Maximize Video Styling */
+.video-card.maximized {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    border-radius: 10px;
+    background-color: #000;
+}
+
+/* Responsive Design: Adjustments for Different Screen Sizes */
+@media (max-width: 1200px) {
+    .video-card {
+        width: 180px; /* Adjust size for large tablets */
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-card {
+        width: 160px; /* Adjust size for medium/small tablets */
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-card {
+        width: 140px; /* Adjust size for mobile phones */
+        height: 140px;
+    }
+
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    h1 {
+        font-size: 18px; /* Adjust header size for mobile */
+    }
+}
